@@ -35,8 +35,5 @@ $(document).ready(function(){
       currentMousePos.x = event.pageX;
       currentMousePos.y = event.pageY;
   });
-
-
-
 });
 
