@@ -29,11 +29,13 @@ $(document).ready(function(){
     );
     $('body').append(dancer.$node);
   });
-
-  var currentMousePos = { x: -1, y: -1 };
+  
+  // Global variable that keeps track of the mouse position
+  window.currentMousePos = { x: -1, y: -1 };
   $(document).mousemove(function(event) {
-      currentMousePos.x = event.pageX;
-      currentMousePos.y = event.pageY;
+      window.currentMousePos.x = event.pageX;
+      window.currentMousePos.y = event.pageY;
   });
+
 });
 

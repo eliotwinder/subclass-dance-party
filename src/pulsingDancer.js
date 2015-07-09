@@ -2,8 +2,8 @@ var PulsingDancer = function(top, left, timeBetweenSteps){
   // varpulsingyDancer = makeDancer(top, left, timeBetweenSteps);
   Dancer.apply(this, arguments);
   this.sizeState = 'inflate';
-  this.timeBetweenSteps = 500;
-  // this.timeBetweenSteps =
+  this.timeBetweenSteps = 60;
+
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
@@ -18,15 +18,17 @@ PulsingDancer.prototype.step = function(){
 
   var pace;
   var borderWidth = this.$node.css('border-width').split('p')[0];
-  if (borderWidth > 100) {
+  // max size
+  if (borderWidth > 48) {
     this.sizeState = 'deflate';
-  } else if (borderWidth < 10) {
+  //min size
+  } else if (borderWidth < 12) {
     this.sizeState = 'inflate';
   }
   if (this.sizeState === 'inflate') {
-    pace = '+=30px';
+    pace = '+=1px';
   } else {
-    pace = '-=30px';
+    pace = '-=1px';
   }
   
   // toggle() is a jQuery method to show/hide the <span> tag.
@@ -35,9 +37,9 @@ PulsingDancer.prototype.step = function(){
 
   var styleSettings = {
     borderWidth: pace,
-    borderRadius: pace
+    borderRadius: pace,
   };
   
-  this.$node.animate(styleSettings, this.timeBetweenSteps, 'linear');
+  this.$node.css(styleSettings);
 
 };

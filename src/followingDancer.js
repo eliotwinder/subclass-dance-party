@@ -1,8 +1,7 @@
 var FollowingDancer = function(top, left, timeBetweenSteps) {
 // varpulsingyDancer = makeDancer(top, left, timeBetweenSteps);
   Dancer.apply(this, arguments);
-  this.timeBetweenSteps = 5;
-  this.animationSpeed = Math.random() * 400;
+  this.timeBetweenSteps = 60;
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 };
@@ -19,9 +18,11 @@ FollowingDancer.prototype.step = function(){
   // other effects you can use on a jQuery-wrapped html tag.
 
   var styleSettings = {
-    
+    top :'' + window.currentMousePos.y + 'px',
+    left :'' + window.currentMousePos.x + 'px'
   };
   
-  this.$node.animate(styleSettings, this.animation, 'linear');
+  this.$node.animate(styleSettings, 60);
 
 };
+
