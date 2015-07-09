@@ -3,6 +3,7 @@ var Dancer = function(top, left, timeBetweenSteps){
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
   this.timeBetweenSteps = timeBetweenSteps;
+  
   this.step();
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
@@ -17,7 +18,7 @@ Dancer.prototype.step = function(){
   
   setTimeout(function() {
     me.step();
-  }, this.timeBetweenSteps); // FREE FUNCTION CALL SO THIS IS BOUND TO WINDOW
+  }, this.timeBetweenSteps); // in setTimeout, originally had no function wrapper 'this' is bound to global window FREE FUNCTION CALL SO THIS IS BOUND TO WINDOW
 };
 
 Dancer.prototype.setPosition = function(top, left){
