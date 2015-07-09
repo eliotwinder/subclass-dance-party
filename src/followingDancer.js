@@ -1,7 +1,8 @@
 var FollowingDancer = function(top, left, timeBetweenSteps) {
 // varpulsingyDancer = makeDancer(top, left, timeBetweenSteps);
   Dancer.apply(this, arguments);
-  this.timeBetweenSteps = 60;
+  this.timeBetweenSteps = 25;
+
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 };
@@ -22,7 +23,6 @@ FollowingDancer.prototype.step = function(){
     left :'' + window.currentMousePos.x + 'px'
   };
   
-  this.$node.animate(styleSettings, 60);
-
+  this.$node.css(styleSettings);
 };
 
