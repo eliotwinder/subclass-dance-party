@@ -31,7 +31,9 @@ body, a:link, a:visited, a:active{
   width:30px;
   height:30px;
   position: absolute;
-  /*background-image: url(monster1.png);*/
-  /*background-size: 80px 60px;*/
-
+}
+.syncro {
+  position: absolute;
+  border: 0px;
+  transition-property: height, width;
 }

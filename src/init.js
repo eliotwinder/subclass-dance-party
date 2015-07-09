@@ -1,6 +1,11 @@
 $(document).ready(function(){
   window.dancers = [];
 
+  window.clock = 0;
+
+  setInterval(function() {
+    clock++;
+  }, 100);
 
   $(".addDancerButton").on("click", function(event){
     var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
