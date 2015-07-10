@@ -1,12 +1,9 @@
 $(document).ready(function(){
   window.dancers = [];
 
-  window.clock = 0;
+  window.clock = new Date();
 
-  setInterval(function() {
-    clock++;
-  }, 100);
-
+  console.log(clock);
   $(".addDancerButton").on("click", function(event){
     var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
 
