@@ -16,6 +16,7 @@ Dancer.prototype.step = function(){
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   var me = this;
+  console
   setTimeout(function() {
     me.step();
   }, this.timeBetweenSteps); // in setTimeout, originally had no function wrapper 'this' is bound to global window FREE FUNCTION CALL SO THIS IS BOUND TO WINDOW

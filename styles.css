@@ -35,5 +35,6 @@ body, a:link, a:visited, a:active{
 .syncro {
   position: absolute;
   border: 0px;
+  transition-timing-function: linear;
   transition-property: height, width;
 }
